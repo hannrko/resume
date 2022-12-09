@@ -15,7 +15,9 @@
 \ProvidesClass{resume}[2010/07/10 v0.9 Resume class]
 
 \LoadClass[11pt,letterpaper]{article}
-
+\usepackage[T1]{fontenc}
+\usepackage[default,light,bold]{sourceserifpro}
+%\usepackage{cmbrights}
 \usepackage[parfill]{parskip}       % Do not indent paragraphs
 \usepackage{array}                  % required for boldface tabular columns
 \usepackage{ifthen}
@@ -57,7 +59,7 @@
 % \printname is used to print the name as a page header
 \def \printname {
   \begingroup
-    \centerline{\textbf{\MakeUppercase{\namesize\@name}}}
+    \centerline{\textbf{\namesize\@name}}
   \endgroup
   \par
   \nameskip
@@ -80,11 +82,11 @@
 % Used to create large resume section
 \newenvironment{rSection}[1]{
   \sectionskip
-  \textbf{\MakeUppercase{#1}}
+  \textbf{\headsize#1}%\MakeUppercase{#1}}
   \sectionlineskip
   \hrule
   \begin{list}{}{
-    \setlength{\leftmargin}{1.5em}
+    \setlength{\leftmargin}{0em}
   }
   \item[]
 }{
@@ -103,7 +105,7 @@
   \emph{#3}                \hfill                  \emph{#4}% Stop a space
   }\smallskip
   % \cdot used for bullets, items non-indented
-  \begin{list}{$\cdot$}{\leftmargin=0em}
+  \begin{list}{$\bullet$}{\leftmargin=1.5em}
   \itemsep -0.5em \vspace{-0.5em}
 }{
   \end{list}
@@ -111,6 +113,7 @@
 }
 
 \def\namesize{\huge}
+\def\headsize{\LARGE}
 \def\nameskip{\medskip}
 \def\addressskip{\smallskip}
 \def\sectionskip{\bigskip}
