@@ -16,8 +16,9 @@
 
 \LoadClass[11pt,letterpaper]{article}
 \usepackage[T1]{fontenc}
-\usepackage[default,light,bold]{sourceserifpro}
+%\usepackage[default,light,bold]{sourceserifpro}
 %\usepackage{cmbrights}
+\usepackage[default,oldstyle,scale=0.95]{opensans}
 \usepackage[parfill]{parskip}       % Do not indent paragraphs
 \usepackage{array}                  % required for boldface tabular columns
 \usepackage{ifthen}
@@ -78,6 +79,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECTIONS: Create section headings
+\newenvironment{rDetails}[1]{
+  \sectionskip
+  \sectionlineskip
+  \begin{list}{}{
+    \setlength{\leftmargin}{0em}
+  }
+  \item[]
+}{
+  \end{list}
+}
 
 % Used to create large resume section
 \newenvironment{rSection}[1]{
@@ -105,7 +116,7 @@
   \emph{#3}                \hfill                  \emph{#4}% Stop a space
   }\smallskip
   % \cdot used for bullets, items non-indented
-  \begin{list}{$\bullet$}{\leftmargin=1.5em}
+  \begin{list}{$\cdot$}{\leftmargin=1.5em}
   \itemsep -0.5em \vspace{-0.5em}
 }{
   \end{list}
